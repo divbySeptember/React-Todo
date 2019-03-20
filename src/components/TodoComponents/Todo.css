@@ -1,6 +1,6 @@
 .todoContainer {
     border: 5px solid rgb(99, 9, 9);
-    height: 375px;
+    height: 100%;
     width: 400px;
     margin-top: -40px;
     background: rgb(255, 255, 195);
@@ -61,4 +61,18 @@ cursor: pointer;
 .btn2:hover{
     background: rgb(99, 9, 9);
     color: rgb(255, 255, 255);
+}
+
+
+.listItem{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.check{
+    
+    margin: 0 15px;
+
 }

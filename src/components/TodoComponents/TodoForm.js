@@ -2,7 +2,8 @@ import React from 'react'
 
 const TodoForm = props => {
         return(
-            <form>
+            <form >
+                
                 <input className="form1"
                 value={props.task}
                 placeholder="New Todo Item"

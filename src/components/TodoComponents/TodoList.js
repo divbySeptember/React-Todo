@@ -5,8 +5,9 @@ import React from 'react'
 
 const TodoList = (props) => {
     return(
-        <div>
-            <h2 className="listHeader">{props.newTodo.task}</h2>
+        <div className="listItem">
+            <input className="check" type="checkbox" onChange={props.completed} />
+            <h2  className="listHeader" > {props.newTodo.task}</h2>
         </div>
     )
 }

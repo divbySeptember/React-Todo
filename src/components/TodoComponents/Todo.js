@@ -44,11 +44,22 @@ class Todo extends React.Component {
             task: this.state.task,
             id: this.state.id,
             completed: this.state.completed,
-            delTodo: this.state.func
+            delTodo: this.state.func,
+            
         }
         this.setState({
             moreTodo: [...this.state.moreTodo, myList]
         });
+    };
+
+    getStyle = () => {
+        return{
+          padding: '10px',
+          textDecoration: this.state.completed ?
+          'line-through' : 'none',
+            cursor: 'pointer'
+          
+        }
     };
 
 
@@ -58,9 +69,15 @@ class Todo extends React.Component {
         return (
             <div className="todoContainer">
 
-                <div className="nameList">
+                <div className="nameList" >
                 {this.state.moreTodo.map((myTodo, index) => (
-                <TodoList key={index} newTodo={myTodo} delTodo={this.props.delTodo} />
+                    
+                <TodoList key={index} newTodo={myTodo} 
+                delTodo={this.props.delTodo}   
+                style={this.getStyle()} 
+                onClick={this.state.completed}
+                />
+
                 ))}
                 </div>
 
