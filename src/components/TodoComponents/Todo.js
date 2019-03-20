@@ -26,7 +26,8 @@ class Todo extends React.Component {
             moreTodo: newTodo,
             task: '',
             id: Date.now(),
-            completed: ''
+            completed: '',
+            
         };
     }
 
@@ -42,7 +43,8 @@ class Todo extends React.Component {
         const myList = {
             task: this.state.task,
             id: this.state.id,
-            completed: this.state.completed
+            completed: this.state.completed,
+            delTodo: this.state.func
         }
         this.setState({
             moreTodo: [...this.state.moreTodo, myList]
@@ -50,13 +52,15 @@ class Todo extends React.Component {
     };
 
 
+   
+
     render () {
         return (
             <div className="todoContainer">
 
                 <div className="nameList">
                 {this.state.moreTodo.map((myTodo, index) => (
-                <TodoList key={index} newTodo={myTodo} />
+                <TodoList key={index} newTodo={myTodo} delTodo={this.props.delTodo} />
                 ))}
                 </div>
 

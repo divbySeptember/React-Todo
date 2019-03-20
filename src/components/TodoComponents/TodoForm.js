@@ -10,7 +10,7 @@ const TodoForm = props => {
                 onChange={props.handleChanges}
                 />
                 <button className="btn1" onClick={props.updateTodo}>Add Too</button> 
-                <button className="btn2" >Clear</button> 
+                <button className="btn2" onClick={props.delTodo} >X</button> 
             </form>
         );
 
