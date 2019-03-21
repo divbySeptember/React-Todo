@@ -1,78 +1,65 @@
-.todoContainer {
-    border: 5px solid rgb(99, 9, 9);
-    height: 100%;
-    width: 400px;
-    margin-top: -40px;
-    background: rgb(255, 255, 195);
+.todoListContainer{
+    
+    margin-bottom: 25px;
+    width: 550px;
+    border: 5px solid #4b0303;
+}
+
+.todoFormContainer{
+    border: 5px solid #4b0303;
+    width: 550px;
+    height: 220px;
+}
+
+.singleTodo{
+    margin: 10px 0px 10px 0;
     padding: 15px;
-}
-
-
-
-.nameList{
-
-}
-
-
-.listHeader h2{
-    font-size: 1.8rem;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 10px;
-    
-}
-
-
-.form1{
-    width: 200px;
-    height: 35px;
-    padding: 3px;
-    
-    
-}
-
-
-.btn1{
-padding: 10px 5px;
-border: none;
-background: rgb(99, 9, 9);
-color: #fff;
-margin: 0 4px;
-border-radius: 5%;
-cursor: pointer;
-
-}
-.btn1:hover{
-    background: #000;
-    color: rgb(255, 255, 195);
-}
-
-
-.btn2{
-padding: 9px 5px;
-background: none;
-border: 2px solid rgb(99, 9, 9);
-color: rgb(99, 9, 9);
-margin: 0 4px;
-border-radius: 5%;
-cursor: pointer;
-    
-}
-
-.btn2:hover{
-    background: rgb(99, 9, 9);
-    color: rgb(255, 255, 255);
-}
-
-
-.listItem{
+    height: 25px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 200;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    
+    background-color: rgb(240, 238, 168);
+    color: #4b0303;
+
+    /* border-top-right-radius: 55px;
+    border-bottom-right-radius: 55px; */
 }
 
-.check{
-    
-    margin: 0 15px;
+.complete{
 
+    background-color: #4b0303;
+    color: white;
 }
+
+input{
+    height: 100px;
+    font-size: 48px;
+    padding-left: 7px;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #4b0303;
+    color: #4b0303;
+    margin: 0 10px 25px 0;
+    background-color: #f9ff8f;
+}
+
+button{
+    margin: 7px 7px 7px 10px;
+    background-color: #4b0303;
+    color: #fff;
+    font-size: 16px;
+    padding: 13px 26px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    width: 250px;
+}
+
+button:hover {
+    background: none;
+    color: #4b0303;
+    border: 2px solid #4b0303;
+  }

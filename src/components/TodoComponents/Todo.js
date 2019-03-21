@@ -1,100 +1,38 @@
-import React from 'react'
+import React from 'react';
+import {TweenLite} from "gsap";
 import './Todo.css'
-import TodoList from './TodoList'
-import TodoForm from './TodoForm'
-
-
-
-const newTodo = [
-    {
-      task: 'Organize Garage',
-      id: 1528817077286,
-      completed: false
-    },
-    {
-      task: 'Bake Cookies',
-      id: 1528817084358,
-      completed: false
-    }
-  ];
 
 class Todo extends React.Component {
-    constructor() {
-        super();
-        this.state = {
+    constructor(props){
+        super()
 
-            moreTodo: newTodo,
-            task: '',
-            id: Date.now(),
-            completed: '',
-            
-        };
+        // reference to the DOM node
+        this.myElement = null;
+        // reference to the animation
+        this.myTween = null;
+        this.outTween = null;
     }
 
+    componentDidMount(){
+        // use the node ref to create the animation
+        this.myTween = TweenLite.from(this.myElement, 0.25, {x: -300});
+    }
 
-    handleChanges = event => {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    };
+    componentWillUnmount(){
+        this.outTween = TweenLite.to(this.myElement, 0.25, {x: -300});   
+    }
 
-    updateTodo = event => {
-        event.preventDefault();
-        const myList = {
-            task: this.state.task,
-            id: this.state.id,
-            completed: this.state.completed,
-            delTodo: this.state.func,
-            
-        }
-        this.setState({
-            moreTodo: [...this.state.moreTodo, myList]
-        });
-    };
-
-    getStyle = () => {
-        return{
-          padding: '10px',
-          textDecoration: this.state.completed ?
-          'line-through' : 'none',
-            cursor: 'pointer'
-          
-        }
-    };
-
-
-   
-
-    render () {
+    render(){
         return (
-            <div className="todoContainer">
+        <div 
+            className={this.props.completed ? 'complete singleTodo' : 'incomplete singleTodo'} 
+            onClick={this.props.function}
+            ref={div => this.myElement = div}>
+            <h3>{this.props.task}</h3>
+        </div>
 
-                <div className="nameList" >
-                {this.state.moreTodo.map((myTodo, index) => (
-                    
-                <TodoList key={index} newTodo={myTodo} 
-                delTodo={this.props.delTodo}   
-                style={this.getStyle()} 
-                onClick={this.state.completed}
-                />
-
-                ))}
-                </div>
-
-            <TodoForm  
-            handleChanges={this.handleChanges}
-            task={this.state.task}
-            id={this.state.id}
-            completed={this.state.completed}
-            updateTodo={this.updateTodo}
-            />
-            </div>
-        );
+    );
     }
-
-    
 }
 
-
-
-export default Todo
+export default Todo;

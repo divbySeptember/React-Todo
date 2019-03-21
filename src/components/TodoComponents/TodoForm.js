@@ -1,25 +1,26 @@
-import React from 'react'
+import React from 'react';
 
-const TodoForm = props => {
-        return(
-            <form >
-                
-                <input className="form1"
-                value={props.task}
-                placeholder="New Todo Item"
-                name="task"
-                onChange={props.handleChanges}
-                />
-                <button className="btn1" onClick={props.updateTodo}>Add Too</button> 
-                <button className="btn2" onClick={props.delTodo} >X</button> 
+function TodoForm(props) {
+    return(
+        <div className={"todoFormContainer"}>
+            <form onSubmit={props.submitFunction.formSubmitHandler}>
+                <input 
+                    name="task" 
+                    value={props.submitFunction.state.task} 
+                    onChange={props.submitFunction.inputChangeHandler} 
+                    placeholder="... add new task" 
+                /><br></br>
+                <button type="submit">Add To List</button>
+                <button type="submit" onClick={props.submitFunction.clearComplete}>Clear Completed</button>
             </form>
-        );
 
-    
+        </div>
+    )
 }
 
+export default TodoForm;
 
-export default TodoForm
+
 
 
 
